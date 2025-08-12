@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Map | Green Track</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="map_styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="map-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Today's Route</h3>
+                <a href="driver.html" class="back-link-map"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+            </div>
+            <div class="location-list">
+                <!-- Location Item 1 -->
+                <div class="location-item" data-lat="-35.19" data-lng="149.14">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="location-details">
+                        <h4>Amrit Dahal</h4>
+                        <p>6 Huggins Street, Bonner</p>
+                    </div>
+                </div>
+                <!-- Location Item 2 -->
+                <div class="location-item" data-lat="-35.18" data-lng="149.13">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="location-details">
+                        <h4>Kripesh Acharya</h4>
+                        <p>15 Richard Street, Bonner</p>
+                    </div>
+                </div>
+                <!-- Location Item 3 -->
+                <div class="location-item" data-lat="-35.17" data-lng="149.12">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="location-details">
+                        <h4>Amit Shahi</h4>
+                        <p>13 Arako Street, Amaroo</p>
+                    </div>
+                </div>
+                <!-- Location Item 4 -->
+                <div class="location-item" data-lat="-35.16" data-lng="149.11">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="location-details">
+                        <h4>Bibesh Subedi</h4>
+                        <p>1 Harley Street, Amaroo</p>
+                    </div>
+                </div>
+            </div>
+             <div class="sidebar-footer">
+                <a href="driver.html" class="btn-complete-route"><i class="fas fa-flag-checkered"></i> Mark Route as Complete</a>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div id="map"></div>
+    </div>
+
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([-35.2809, 149.1300], 13);
+
+        // Add a clean, modern tile layer
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        }).addTo(map);
+
+        // Add markers for each location
+        var locations = document.querySelectorAll('.location-item');
+        locations.forEach(function(location) {
+            var lat = location.getAttribute('data-lat');
+            var lng = location.getAttribute('data-lng');
+            var marker = L.marker([lat, lng]).addTo(map);
+        });
+
+        // Pan to location on click
+        locations.forEach(function(location) {
+            location.addEventListener('click', function() {
+                var lat = this.getAttribute('data-lat');
+                var lng = this.getAttribute('data-lng');
+                map.panTo([lat, lng]);
+            });
+        });
+    </script>
+
+</body>
+</html>

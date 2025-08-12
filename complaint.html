@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Complaint | Green Track</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-container">
+    <!-- Dashboard Header -->
+    <header class="dashboard-main-header">
+      <a href="resident.html" class="back-link"><i class="fas fa-arrow-left"></i></a>
+      <h3 class="page-title">Submit a Complaint</h3>
+      <a href="index.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </header>
+
+    <main class="dashboard-main">
+      <!-- In a real app, the form action would point to a PHP script -->
+      <form action="api/submit_complaint.php" method="POST" enctype="multipart/form-data" class="complaint-form">
+        
+        <!-- Left Column: Image Upload -->
+        <div class="complaint-form-section">
+            <div class="form-group">
+              <label for="image-upload" class="image-upload-box">
+                <i class="fas fa-camera"></i>
+                <span>Upload Photo of the Issue</span>
+                <p class="upload-text">Click here to select an image</p>
+              </label>
+              <input type="file" id="image-upload" name="complaint_image" accept="image/*" style="display: none;">
+              <img id="image-preview" src="#" alt="Image Preview" style="display: none; width: 100%; border-radius: 12px; margin-top: 1rem;"/>
+            </div>
+        </div>
+
+        <!-- Right Column: Form Fields -->
+        <div class="complaint-form-section">
+            <div class="form-group">
+              <label for="waste-type">Type of Waste</label>
+              <input type="text" id="waste-type" name="waste_type" class="form-control-dash" value="Garbage" readonly>
+            </div>
+            
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" class="form-control-dash" value="6 Huggins St, Bonner" required>
+            </div>
+    
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="complaint_date" class="form-control-dash" required>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-dash-primary">UPLOAD COMPLAINT</button>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    // Set today's date as the default
+    document.getElementById('date').valueAsDate = new Date();
+
+    // Preview uploaded image
+    const imageUpload = document.getElementById('image-upload');
+    const imagePreview = document.getElementById('image-preview');
+    const uploadText = document.querySelector('.upload-text');
+
+    imageUpload.onchange = evt => {
+        const [file] = imageUpload.files;
+        if (file) {
+            imagePreview.src = URL.createObjectURL(file);
+            imagePreview.style.display = 'block';
+            uploadText.style.display = 'none'; // Hide the text after upload
+        }
+    }
+  </script>
+
+</body>
+</html>

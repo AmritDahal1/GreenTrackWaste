@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Track - Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Green Track</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+    <div class="contact">
+      <a href="mailto:support@greentrackcanberra.com">support@greentrackcanberra.com</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-signup">
+      <div class="hero-content">
+        <h2>Sign Up for Green Track</h2>
+        <p>Join our growing community in Canberra.</p>
+      </div>
+    </section>
+
+    <section class="service-grid">
+      <div class="service-card">
+        <form id="signupForm" style="width: 100%;">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Choose a username" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Create a password" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm your password" required>
+          </div>
+          <div class="form-group">
+            <label for="role">Register As</label>
+            <select name="role" id="role" class="form-control" required>
+              <option value="" disabled selected>Select your role</option>
+              <option value="resident">Resident</option>
+              <option value="driver">Driver</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-auth" style="margin-top: 1rem;">Sign Up</button>
+        </form>
+         <div class="auth-footer" style="margin-top: 1.5rem;">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Green Track Waste Management. All rights reserved.</p>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms of Service</a> |
+    <a href="contact.html">Contact</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Track</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <!-- Leaflet Map JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">Green Track</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+    <div class="contact">
+      <a href="mailto:support@greentrackcanberra.com">support@greentrackcanberra.com</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-home">
+      <div class="hero-content">
+        <h2>Waste Management in Canberra</h2>
+        <p>Green Track, a new company with excellent feedback, is transforming waste management across Canberra's suburbs with efficient, eco-friendly solutions.</p>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div><h4>10+</h4><p>Suburbs Served</p></div>
+      <div><h4>50+</h4><p>Growing Clients</p></div>
+      <div><h4>95%</h4><p>Positive Feedback</p></div>
+    </div>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+                <h3>1. Sign Up</h3>
+                <p>Create an account as a resident or driver to get started.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon"><i class="fas fa-bullhorn"></i></div>
+                <h3>2. Report an Issue</h3>
+                <p>Residents can easily report issues like overflowing bins.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon"><i class="fas fa-route"></i></div>
+                <h3>3. We Respond</h3>
+                <p>Our drivers are dispatched to resolve the issue promptly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="why-choose-us-content">
+            <h2 class="section-title">Why Choose Green Track?</h2>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Eco-Friendly Practices</li>
+                <li><i class="fas fa-check-circle"></i> Reliable & Timely Service</li>
+                <li><i class="fas fa-check-circle"></i> Transparent Communication</li>
+                <li><i class="fas fa-check-circle"></i> Serving All Canberra Suburbs</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"Green Track has been a game-changer for our neighborhood. The service is reliable, and the app makes reporting issues so easy."</p>
+                <h4>- Sarah L., Bonner</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"As a business owner, I appreciate the efficiency of Green Track's commercial services. Highly recommended."</p>
+                <h4>- David C., Mitchell</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+        <h2 class="section-title">We Are Located at Gungahlin Place</h2>
+        <p class="location-subtitle">Our main depot is centrally located to serve all of Canberra efficiently.</p>
+        <div id="homepage-map"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Green Track Waste Management. All rights reserved.</p>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms of Service</a> |
+    <a href="contact.html">Contact</a>
+  </footer>
+
+  <script>
+      // Initialize the map for the homepage
+      var homepageMap = L.map('homepage-map').setView([-35.1838, 149.1345], 14); // Centered on Gungahlin
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+      }).addTo(homepageMap);
+
+      var marker = L.marker([-35.1838, 149.1345]).addTo(homepageMap);
+      marker.bindPopup("<b>Green Track Depot</b><br>Gungahlin Place, Gungahlin").openPopup();
+  </script>
+
+</body>
+</html>

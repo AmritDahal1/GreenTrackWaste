@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Complaint | Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-container">
+        <header class="dashboard-main-header">
+             <a href="admin.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+            <h3 class="page-title">Complaint Details</h3>
+            <a href="index.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </header>
+
+        <main class="dashboard-main">
+            <div class="view-data-container">
+                <div class="data-image">
+                    <img src="17.avif" alt="Complaint Image">
+                </div>
+                <div class="data-details">
+                    <div class="data-item">
+                        <label>Type of Waste</label>
+                        <p>Garbage in road side</p>
+                    </div>
+                    <div class="data-item">
+                        <label>Address</label>
+                        <p>6 Huggins Street, Bonner</p>
+                    </div>
+                    <div class="data-item">
+                        <label>Date Reported</label>
+                        <p>2025/08/06</p>
+                    </div>
+                     <div class="data-item">
+                        <label>Reported By</label>
+                        <p>John Doe</p>
+                    </div>
+                    <div class="complaint-actions" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                        <a href="admin.html" class="action-btn solve">Mark as Solved</a>
+                        <a href="admin.html" class="action-btn cancel">Cancel Ticket</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

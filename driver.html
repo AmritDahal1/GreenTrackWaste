@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driver Dashboard | Green Track</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-container">
+    <!-- Dashboard Header -->
+    <header class="dashboard-main-header">
+      <div class="user-info">
+        <img src="https://placehold.co/50x50/E6F0EA/2D6A4F?text=MJ" alt="User Avatar" class="avatar">
+        <div>
+          <h4>Hello, Mike Johnson</h4>
+          <p>Driver</p>
+        </div>
+      </div>
+      <a href="index.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="stats-section">
+            <div class="stat-item">
+              <i class="fas fa-star"></i>
+              <span class="stat-value">4879</span>
+              <span class="stat-label">Points</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-clipboard-list"></i>
+              <span class="stat-value">15</span>
+              <span class="stat-label">Complaints</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-exclamation-triangle"></i>
+              <span class="stat-value">5</span>
+              <span class="stat-label">Pending</span>
+            </div>
+        </div>
+
+        <div class="dashboard-main-grid">
+            <!-- Left Column -->
+            <div class="dashboard-section">
+                <section class="tasks-section">
+                    <h3>Today's Collection Tasks</h3>
+                    <div class="driver-task-list">
+                      <!-- Task Item 1 -->
+                      <div class="driver-task-item">
+                        <img src="https://placehold.co/40x40/A3B9A3/FFFFFF?text=AD" alt="Avatar" class="task-avatar">
+                        <div class="task-details">
+                          <h4>Amrit Dahal</h4>
+                          <p>6 Huggins Street, Bonner</p>
+                        </div>
+                        <span class="task-time">10 min</span>
+                      </div>
+                      <!-- Task Item 2 -->
+                      <div class="driver-task-item">
+                        <img src="https://placehold.co/40x40/A3B9A3/FFFFFF?text=KA" alt="Avatar" class="task-avatar">
+                        <div class="task-details">
+                          <h4>Kripesh Acharya</h4>
+                          <p>15 Richard Street, Bonner</p>
+                        </div>
+                        <span class="task-time">10 min</span>
+                      </div>
+                       <!-- Task Item 3 -->
+                      <div class="driver-task-item">
+                        <img src="https://placehold.co/40x40/A3B9A3/FFFFFF?text=AS" alt="Avatar" class="task-avatar">
+                        <div class="task-details">
+                          <h4>Amit Shahi</h4>
+                          <p>13 Arako Street, Amaroo</p>
+                        </div>
+                        <span class="task-time">15 min</span>
+                      </div>
+                       <!-- Task Item 4 -->
+                      <div class="driver-task-item">
+                        <img src="https://placehold.co/40x40/A3B9A3/FFFFFF?text=BS" alt="Avatar" class="task-avatar">
+                        <div class="task-details">
+                          <h4>Bibesh Subedi</h4>
+                          <p>1 Harley Street, Amaroo</p>
+                        </div>
+                        <span class="task-time">16 min</span>
+                      </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="dashboard-section">
+                <section class="driver-actions-section">
+                    <h3>Quick Actions</h3>
+                    <a href="driver_map.html" class="action-link"><i class="fas fa-route"></i> View Full Route</a>
+                    <a href="driver_report_issue.html" class="action-link"><i class="fas fa-exclamation-circle"></i> Report an Issue</a>
+                </section>
+            </div>
+        </div>
+    </main>
+  </div>
+
+</body>
+</html>

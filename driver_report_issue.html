@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Issue | Green Track</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-container">
+        <!-- Dashboard Header -->
+        <header class="dashboard-main-header">
+             <a href="driver.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+            <h3 class="page-title">Report an Issue</h3>
+            <a href="index.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <form action="api/driver_report.php" method="POST" class="report-issue-form">
+                
+                <!-- Left Column: Form Fields -->
+                <div class="form-section">
+                    <div class="form-group">
+                      <label for="resident-name">Resident Name</label>
+                      <input type="text" id="resident-name" name="resident_name" class="form-control-dash" placeholder="e.g., John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="address">Address</label>
+                      <input type="text" id="address" name="address" class="form-control-dash" placeholder="e.g., 123 Green St, Canberra" required>
+                    </div>
+            
+                    <div class="form-group">
+                      <label for="issue-description">Issue Description</label>
+                      <textarea id="issue-description" name="issue_description" class="form-control-dash" rows="6" placeholder="Describe the issue (e.g., bin not accessible, contamination, etc.)" required></textarea>
+                    </div>
+                </div>
+
+                <!-- Right Column: Location Map -->
+                <div class="form-section">
+                     <div class="form-group">
+                        <label>Location</label>
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Location will be auto-detected</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-dash-primary">SUBMIT REPORT</button>
+            </form>
+        </main>
+    </div>
+
+</body>
+</html>
